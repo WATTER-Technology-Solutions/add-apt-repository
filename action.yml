@@ -85,7 +85,7 @@ runs:
           suite=$(sed -ne 's/^VERSION_CODENAME=//p' /etc/os-release)
         fi
 
-        line="deb$options ${{ inputs.uri }} $suite apollo"
+        line="deb$options ${{ inputs.uri }} $suite watter-apollo"
         file=/etc/apt/sources.list.d/add-apt-repository.list
         grep --quiet --line-regexp --fixed-strings "$line" "$file" \
           || echo "$line" | sudo tee --append "$file"
